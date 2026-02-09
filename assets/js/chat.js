@@ -17,12 +17,11 @@ $(document).ready(function() {
     });
   }
 
-  function setDate() {
-    d = new Date()
-    if (m != d.getMinutes()) {
-      m = d.getMinutes();
-      $('<div class="timestamp">' + d.getHours() + ':' + m + '</div>').appendTo($('.message:last'));
-    }
+  function getTimestamp() {
+    d = new Date();
+    m = d.getMinutes();
+    var formattedMinutes = m < 10 ? '0' + m : m;
+    return '<span class="timestamp">' + d.getHours() + ':' + formattedMinutes + '</span>';
   }
 
   function callChatbotApi(message) {
@@ -42,8 +41,8 @@ $(document).ready(function() {
     if ($.trim(msg) == '') {
       return false;
     }
-    $('<div class="message message-personal">' + msg + '</div>').appendTo($('.mCSB_container')).addClass('new');
-    setDate();
+    var container = $('.mCSB_container').length ? $('.mCSB_container') : $('.messages-content');
+    $('<div class="message message-personal"><span class="message-text">' + msg + '</span>' + getTimestamp() + '</div>').appendTo(container).addClass('new');
     $('.message-input').val(null);
     updateScrollbar();
 
@@ -99,13 +98,13 @@ $(document).ready(function() {
   })
 
   function insertResponseMessage(content) {
-    $('<div class="message loading new"><figure class="avatar"><img src="https://media.tenor.com/images/4c347ea7198af12fd0a66790515f958f/tenor.gif" /></figure><span></span></div>').appendTo($('.mCSB_container'));
+    var container = $('.mCSB_container').length ? $('.mCSB_container') : $('.messages-content');
+    $('<div class="message loading new"><figure class="avatar"><img src="https://media.tenor.com/images/4c347ea7198af12fd0a66790515f958f/tenor.gif" /></figure><span></span></div>').appendTo(container);
     updateScrollbar();
 
     setTimeout(function() {
       $('.message.loading').remove();
-      $('<div class="message new"><figure class="avatar"><img src="https://media.tenor.com/images/4c347ea7198af12fd0a66790515f958f/tenor.gif" /></figure>' + content + '</div>').appendTo($('.mCSB_container')).addClass('new');
-      setDate();
+      $('<div class="message new"><figure class="avatar"><img src="https://media.tenor.com/images/4c347ea7198af12fd0a66790515f958f/tenor.gif" /></figure><div class="message-content"><span class="message-text">' + content + '</span>' + getTimestamp() + '</div></div>').appendTo(container).addClass('new');
       updateScrollbar();
       i++;
     }, 500);

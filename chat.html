@@ -5,11 +5,16 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="This is a starter project for a chatbot concierge application built on AWS.">
     <meta name="author" content="Andrei Papancea">
 
-    <title>Chatbot Concierge</title>
+    <title>NYU Chatbot Concierge</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Bootstrap core CSS -->
     <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
@@ -47,29 +52,43 @@
 
   <body>
 
-    <div class="site-wrapper white">
+    <div class="app-container">
 
-      <div class="site-wrapper-inner">
+      <div class="chat-wrapper">
 
-        <div class="cover-container">
-
-          <div class="masthead clearfix">
-            <div class="inner">
-              <h3 class="masthead-brand">Chatbot Concierge</h3>
-            </div>
-          </div>
-
-          <div class="inner">
-            <div class="chat">
-              <div class="messages">
-                <div class="messages-content"></div>
+        <!-- Chat Header -->
+        <div class="chat-header">
+          <div class="header-content">
+            <div class="bot-info">
+              <div class="nyu-logo">
+                <img src="./assets/NYU-Logo (1).png" alt="NYU Logo">
               </div>
-              <div class="message-box">
-                <textarea type="text" class="message-input" placeholder="Type message..."></textarea>
+              <div class="bot-details">
+                <h1 class="bot-name">NYU Concierge</h1>
+                <p class="bot-status">
+                  <span class="status-indicator"></span>
+                  Online
+                </p>
               </div>
             </div>
           </div>
+        </div>
 
+        <!-- Chat Container -->
+        <div class="chat-container">
+          <div class="chat">
+            <div class="messages">
+              <div class="messages-content"></div>
+            </div>
+            <div class="message-box">
+              <div class="input-wrapper">
+                <textarea type="text" class="message-input" placeholder="Type your message..." rows="1"></textarea>
+                <button class="message-submit" type="button">
+                  <i class="fas fa-paper-plane"></i>
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
 
       </div>
