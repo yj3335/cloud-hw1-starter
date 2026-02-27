@@ -1,5 +1,9 @@
 # Cloud Computing Fall 2025 - HW 1
 
+Team Details:
+Binti Padaliya - bap
+Yash Jain - yj3335
+
 *Chatbot Concierge*
 
 Frontend starter repository for HW 1 of the Cloud Computing & Big Data
