@@ -26,8 +26,5 @@ Lex identifies user intent and collects preferences (location, cuisine, party si
 LF1 validates inputs and pushes the request to an SQS queue
 LF2 (triggered every minute) picks up the request, finds matching restaurants via OpenSearch, fetches details from DynamoDB, and emails the user 3 restaurant suggestions via SES
 
-## Supported Cuisines ##
-Chinese, Japanese, Italian, Mexican, Indian
-
 ## Supported Locations ##
 Manhattan, Brooklyn, Queens, Bronx, Staten Island
