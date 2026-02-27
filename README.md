@@ -1,7 +1,7 @@
-# Cloud Computing Fall 2025 - HW 1
+# Cloud Computing Spring 2026 - HW 1
 
 Team Details:
-Binti Padaliya - bap
+Binti Padaliya - bap9626
 Yash Jain - yj3335
 
 *Chatbot Concierge*
